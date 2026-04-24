@@ -11,6 +11,4 @@ scrape_configs:
           - aimboard.onrender.com
     authorization:
       type: Bearer
-      # File must contain the raw token only (same value as backend METRICS_SCRAPE_TOKEN).
-      # Mount this path in Docker/Render; do not commit the token file.
-      credentials_file: /etc/prometheus/secrets/bearer_token
+      credentials: aimboard_prod_metrics_secure_token_x93LkP72Qa_2026
