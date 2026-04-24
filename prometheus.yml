@@ -1,0 +1,16 @@
+global:
+  scrape_interval: 15s
+  evaluation_interval: 15s
+
+scrape_configs:
+  - job_name: "aimboard-backend"
+    scheme: https
+    metrics_path: /metrics
+    static_configs:
+      - targets:
+          - aimboard.onrender.com
+    authorization:
+      type: Bearer
+      # File must contain the raw token only (same value as backend METRICS_SCRAPE_TOKEN).
+      # Mount this path in Docker/Render; do not commit the token file.
+      credentials_file: /etc/prometheus/secrets/bearer_token

@@ -1,0 +1,6 @@
+# Never commit scrape credentials
+secrets/
+**/bearer_token
+*.token
+.env
+.env.*
